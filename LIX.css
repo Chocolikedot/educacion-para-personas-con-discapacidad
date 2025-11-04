@@ -1,0 +1,382 @@
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+    background-color: #f8f5ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+
+  }
+
+  h1{
+
+    font-size:  2.6em;
+    text-align: center;
+    color:  #7b2cbf;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+
+  }
+
+  h2{
+
+    font-size: 2em;
+    color: #7b2cbf;
+    border-bottom: 3px solid #9d4edd;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+  h3{
+
+    font-size: 1.5em;
+    color: #9d4edd;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  h4{
+
+    font-family: sans-serif;
+font-size: 1.7em;
+color: #f5f5f5;
+text-align: center;
+font-weight: 500;
+letter-spacing: 1px;
+margin: 10px 0;
+margin-bottom: 30px;
+margin-top: 30px;
+
+
+
+
+  }
+
+
+  p{
+    font-style: italic;
+    text-align: justify;
+    font-size: 1.1em;
+    margin-bottom: 50px;
+    margin-top: 30px;
+  }
+
+  img{
+
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    border-radius: 10px;
+    width: 330px;
+    height: auto;
+    object-fit: cover;
+
+
+  }
+  .img2{
+    display: block;
+    margin: 20px auto;
+    max-width: 450px;
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .alto-contraste {
+    background-color: #000000 !important;
+    color: #ffff00 !important;
+  }
+  
+  .alto-contraste a {
+    color: #00ffff !important;
+  }
+  
+  header{
+
+    background: linear-gradient(135deg, #3b0a45,#6a0dad,#9b2fcf,#f28f6b);
+    color: white;
+    padding: 35px 20px;
+    text-align: center;
+    
+  }
+
+
+  
+  nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    padding: 5px 10px;
+    background: #4b0082;
+    border-radius: 5px;
+  }
+  
+  nav a:hover {
+    background: #ba55d3;
+  }
+  
+  .barra-accesibilidad {
+    text-align: center;
+    padding: 10px;
+    background: #9bbbda;
+  }
+  
+  .barra-accesibilidad button {
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .barra-accesibilidad button:hover {
+    background-color: #ba55d3;
+    transform: scale(1.05);
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  footer {
+   background: linear-gradient(135deg,#f28f6b,#9b2fcf,#6a0dad,#3b0a45);
+   color: white;
+   text-align: center;
+   padding: 30px 20px;
+
+  }
+
+  .seleccion{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 60px auto;  
+    
+  }
+ 
+  .discapacidad{
+   
+ 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 80px;
+    background: #7a42f4;
+
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.7s ease, background 0.7s ease;
+    font-family: sans-serif;
+
+
+
+  }
+
+  .discapacidad:hover{
+
+    background: #4B0082;
+    transform: scale(1.1);
+  
+  }
+
+  .Temas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 60px auto;
+  }
+  .NIX{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 280px;
+    background: #7a42f4;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: transform 0.5s ease, background 0.5s ease;
+  }
+  .NIXimg{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+  }
+
+  .NIX:hover{
+    background: #4b0082;
+  }
+  .font-btn { background: #6366f1; color: white; }
+.contrast { background: #facc15; color: black; }
+.grayscale { background: #6b7280; color: white; }
+.tts-btn { background: #10b981; color: white; }
+
+.high-contrast {
+  background-color: black !important;
+  color: white !important;
+}
+
+.grayscale-filter {
+  filter: grayscale(1);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.15);
+}
+
+
+.btn {
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #4338ca;
+}
+
+
+.controls {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.controls button {
+  margin: 4px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.controls button:hover {
+  transform: scale(1.05);
+}
+
+/* ====================== Sección de contenidos ====================== */
+
+.titulo-principal {
+  text-align: center;
+  color: #7b2cbf;
+  margin-top: 30px;
+  font-size: 1.6em;
+}
+
+.intro-text {
+  text-align: center;
+  max-width: 700px;
+  margin: 10px auto 40px auto;
+  color: #333;
+  font-size: 1em;
+}
+
+/* Grid de tarjetas */
+.seleccion {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 0 20px 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tarjetas de discapacidad */
+.discapacidad-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #ccc;
+  border-left: 5px solid transparent;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.discapacidad-card h3 {
+  margin-top: 0;
+  color: #7b2cbf;
+  font-size: 1.2em;
+}
+
+.discapacidad-card p,
+.discapacidad-card ul {
+  margin: 10px 0;
+  color: #333;
+  font-size: 0.95em;
+}
+
+.discapacidad-card ul {
+  margin-left: 18px;
+  padding-left: 0;
+}
+
+.discapacidad-card li {
+  margin-bottom: 5px;
+}
+
+/* Botón dentro de la tarjeta */
+.discapacidad-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #7b2cbf;
+  border: 2px solid #7b2cbf;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.discapacidad-btn:hover {
+  background-color: #7b2cbf;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Hover en tarjeta */
+.discapacidad-card:hover {
+  border-left: 5px solid #7b2cbf;
+  box-shadow: 0 6px 15px rgba(123,44,191,0.15);
+  transform: translateY(-2px);
+}

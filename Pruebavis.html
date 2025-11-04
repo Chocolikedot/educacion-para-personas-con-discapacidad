@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prueba de Visión</title>
+<link rel="stylesheet" href="LIX.css">
+<link rel="stylesheet" href="pruebavis.css">
+</head>
+<body>
+
+<header>
+  <h4>PRUEBA DE VISIÓN</h4>
+  <nav>
+    <a href="Index.html">Inicio</a>
+    <a href="Contenidos.html">Contenidos</a>
+    <a href="Recursos.html">Recursos</a>
+  </nav>
+</header>
+
+<div class="controls">
+    <button class="font-btn" onclick="changeFont(2)">A+</button>
+    <button class="font-btn" onclick="changeFont(-2)">A-</button>
+    <button class="contrast" onclick="toggleContrast()">Contraste</button>
+    <button class="grayscale" onclick="toggleGrayscale()">Grises</button>
+    <button class="tts-btn" id="ttsPagina" onclick="leerPagina()">TAV</button>
+  </div>
+
+
+<main>
+  <h2 class="titulo-principal">Pruebas Visuales</h2>
+  
+  <div class="vision-card">
+    <h3>Prueba de Agudeza Visual</h3>
+    <p>
+      En esta prueba verás una serie de letras que van haciéndose cada vez más pequeñas. 
+      Tu objetivo es identificar correctamente cada una desde la distancia indicada. 
+      No te preocupes si algunas son difíciles de ver: la idea es medir cuán clara es tu visión a distintas distancias. 
+      Esta prueba nos ayuda a saber si necesitas algún ajuste en tus lentes o si tus ojos están viendo con la nitidez que deberían. 
+      Recuerda que no hay respuestas “incorrectas”, solo información sobre tu visión.
+    </p>
+    <img src="PRV1.png" alt="Serie de letras para prueba de agudeza visual">
+  </div>
+
+  <div class="vision-card">
+    <h3>Prueba de Daltonismo</h3>
+    <p>
+      Aquí se te presentarán varios círculos llenos de colores y, entre ellos, aparecerán números escondidos. 
+      Tu tarea es intentar identificar los números dentro de los círculos. 
+      No te preocupes si no logras ver algunos: muchas personas tienen dificultad con ciertos tonos, especialmente rojo y verde. 
+      Esta prueba sirve para detectar problemas en la percepción de los colores y nos ayuda a entender cómo tu cerebro interpreta lo que tus ojos ven. 
+      Es divertida y rápida, y no requiere memorizar nada.
+    </p>
+    <img src="PRV2.webp" alt="Círculos de colores con números para prueba de daltonismo">
+  </div>
+
+  <div class="vision-card">
+    <h3>Prueba de Campo Visual</h3>
+    <p>
+      Para esta prueba mirarás un paisaje que aparecerá frente a ti. 
+      Mientras te concentras en el centro, trata de describir todos los detalles que puedas percibir, incluso los que aparecen en los bordes de tu vista. 
+      Algunas cosas aparecerán “fuera” de tu enfoque principal, y eso es normal: estamos evaluando tu visión periférica. 
+      Esta prueba es importante porque nos permite descubrir si hay zonas que no estás viendo y así detectar posibles problemas de visión lateral o áreas ciegas que pueden pasar desapercibidas.
+    </p>
+    <img src="PRV3.webp" alt="Paisaje para prueba de campo visual con distracciones">
+  </div>
+
+  <div class="vision-card">
+    <h3>Prueba de Contraste</h3>
+    <p>
+      En esta prueba activa el modo de alto contraste y la escala de grises de la página para que puedas ver los elementos con mayor claridad. 
+      Tu tarea será identificar y percibir todos los detalles y tonos de gris presentes. 
+      Esto es especialmente útil para situaciones con poca luz o ambientes complicados, donde distinguir objetos puede ser difícil. 
+      La prueba nos ayuda a entender qué tan bien tus ojos logran diferenciar entre sombras y colores sutiles, algo que es clave para tu seguridad y comodidad visual.
+    </p>
+    <img src="PRV4.webp" alt="Prueba de contraste">
+  </div>
+
+</main>
+
+<footer>
+  <h5>EDUCACIÓN SIN BARRERAS</h5>
+  <h5>2025</h5>
+</footer>
+
+<script src="Java.js"></script>
+
+  <script>
+    const botonTTS = document.getElementById('ttsPagina');
+    let leyendo = false; 
+    let mensaje = null;  
+
+    botonTTS.addEventListener('click', () => {
+      if (!leyendo) {
+        const textoCompleto = document.body.innerText;
+        mensaje = new SpeechSynthesisUtterance(textoCompleto);
+        mensaje.lang = "es-ES";
+        mensaje.rate = 1;
+        mensaje.pitch = 1;
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(mensaje);
+        leyendo = true;
+        botonTTS.textContent = "Pausar lectura";
+      } else {
+        if (speechSynthesis.paused) {
+          speechSynthesis.resume();
+          botonTTS.textContent = "Pausar lectura";
+        } else {
+          speechSynthesis.pause();
+          botonTTS.textContent = "Reanudar lectura";
+        }
+      }
+    });
+
+    window.speechSynthesis.onend = () => {
+      leyendo = false;
+      botonTTS.textContent = "TAV";
+    };
+  </script>
+
+
+
+
+</body>
+</html>

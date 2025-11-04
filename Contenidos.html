@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CONTENIDOS</title>
+<link rel="stylesheet" href="LIX.css">
+<link rel="stylesheet" href="Contenidos.css">
+</head>
+<body>
+
+<header>
+<h4>CONTENIDOS ADAPTADOS</h4>
+<nav>
+  <a href="Index.html">Inicio</a>
+  <a href="Recursos.html">Recursos</a>
+</nav>
+</header>
+
+<div class="controls">
+  <button class="font-btn" onclick="changeFont(2)">A+</button>
+  <button class="font-btn" onclick="changeFont(-2)">A-</button>
+  <button class="contrast" onclick="toggleContrast()">Contraste</button>
+  <button class="grayscale" onclick="toggleGrayscale()">Grises</button>
+  <button class="tts-btn" id="ttsPagina" onclick="leerPagina()">TAV</button>
+</div>
+
+<h2 class="titulo-principal">SELECCIONA TU TIPO DE DISCAPACIDAD PARA EMPEZAR</h2>
+<p class="intro-text">
+  Explora contenidos adaptados, herramientas interactivas y actividades diseñadas para cada tipo de discapacidad.
+  Selecciona tu área y descubre recursos que facilitan el aprendizaje de manera inclusiva y entretenida.
+</p>
+
+<main class="seleccion">
+  <div class="discapacidad-card">
+    <h3>Discapacidad Visual</h3>
+    <ul>
+      <li>Historia del sistema braille</li>
+      <li>Conocimientos basicos</li>
+      <li>Lectura asistida</li>
+    </ul>
+    <a href="Visual.html" class="discapacidad-btn">Explorar Visual</a>
+  </div>
+
+  <div class="discapacidad-card">
+    <h3>Discapacidad Auditiva</h3>
+    <ul>
+      <li>Lenguaje de señas</li>
+      <li>Videos con subtitulos y lenguaje de señas</li>
+      <li>Conocimientos basicos</li>
+    </ul>
+    <a href="Auditiva.html" class="discapacidad-btn">Explorar Auditiva</a>
+  </div>
+
+  <div class="discapacidad-card">
+    <h3>Discapacidad del Habla</h3>
+    <ul>
+      <li>Comunicacion alternativa</li>
+      <li>Ejercicios de pronunciacion</li>
+      <li>Texto a voz</li>
+    </ul>
+    <a href="MUD.html" class="discapacidad-btn">Explorar Habla</a>
+  </div>
+</main>
+
+
+<footer>
+  <h5>EDUCACION SIN BARRERAS</h5>
+  <h5>2025</h5>
+</footer>
+
+<script src="Java.js"></script>
+<script>
+const botonTTS = document.getElementById('ttsPagina');
+let leyendo = false; 
+let mensaje = null;  
+
+botonTTS.addEventListener('click', () => {
+  if (!leyendo) {
+    const textoCompleto = document.body.innerText;
+    mensaje = new SpeechSynthesisUtterance(textoCompleto);
+    mensaje.lang = "es-ES";
+    mensaje.rate = 1;
+    mensaje.pitch = 1;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(mensaje);
+    leyendo = true;
+    botonTTS.textContent = "Pausar lectura";
+  } else {
+    if (speechSynthesis.paused) {
+      speechSynthesis.resume();
+      botonTTS.textContent = "Pausar lectura";
+    } else {
+      speechSynthesis.pause();
+      botonTTS.textContent = "Reanudar lectura";
+    }
+  }
+});
+
+window.speechSynthesis.onend = () => {
+  leyendo = false;
+  botonTTS.textContent = "TAV";
+};
+</script>
+
+</body>
+</html>

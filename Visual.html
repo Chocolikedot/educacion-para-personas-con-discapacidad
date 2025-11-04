@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contenidos para Discapacidad Visual</title>
+<link rel="stylesheet" href="LIX.css">
+<link rel="stylesheet" href="Visual.css">
+</head>
+<body>
+
+<header>
+<h4>DISCAPACIDAD VISUAL</h4>
+<nav>
+  <a href="Index.html">Inicio</a>
+   <a href="Contenidos.html">Contenidos</a>
+  <a href="Recursos.html">Recursos</a>
+</nav>
+</header>
+
+<div class="controls">
+    
+  <button class="font-btn" onclick="changeFont(2)">A+</button>
+  <button class="font-btn" onclick="changeFont(-2)">A-</button>
+  <button class="contrast" onclick="toggleContrast()">Contraste</button>
+  <button class="grayscale" onclick="toggleGrayscale()">Grises</button>
+  <button class="tts-btn" id="ttsPagina" onclick="leerPagina()">TAV</button>
+ 
+</div>
+
+<h2 class="titulo-principal">TEMAS CON LECTURA ASISTIDA</h2>
+
+<main class="seleccion">
+
+<!-- Tema 1: Historia del Sistema Braille -->
+<div class="discapacidad-card" id="texto1">
+  <h3>Historia del Sistema Braille</h3>
+  <p>Louis Braille inventó el sistema Braille en 1824, permitiendo que personas ciegas o con baja visión pudieran leer y escribir mediante combinaciones de puntos en relieve.</p>
+  <p>Antes del Braille, existían sistemas táctiles muy complejos y poco accesibles. El método de Braille simplificó la lectura, usando patrones de 6 puntos que representan letras, números y símbolos.</p>
+  <p>Este sistema se expandió rápidamente por todo el mundo y se convirtió en la base de la educación para personas con discapacidad visual.</p>
+  <p>Hoy, además de libros impresos en Braille, existen dispositivos electrónicos que permiten leer y escribir utilizando este sistema de manera digital, facilitando aún más la inclusión educativa.</p>
+<p>Louis Braile 1809-1952</p>
+  <img src="louisbr1.webp" alt="Louis Braile 1809-1852">
+   <p>  Ahora di en tus propias palabras lo que entendiste de la lectura     </p>
+  <button class="leer-btn">Leer en voz alta</button>
+</div>
+
+<!-- Tema 2: El Sistema Solar -->
+<div class="discapacidad-card" id="texto2">
+  <h3>El Sistema Solar</h3>
+  <p>El Sistema Solar está compuesto por el Sol y todos los cuerpos celestes que orbitan a su alrededor, incluyendo planetas, asteroides, cometas y satélites naturales.</p>
+  <p>Los planetas se dividen en rocosos (Mercurio, Venus, Tierra y Marte) y gaseosos (Júpiter, Saturno, Urano y Neptuno), cada uno con características únicas.</p>
+  <p>El Sol es la estrella central, cuya gravedad mantiene a los planetas en órbita y proporciona la luz y el calor necesarios para la vida en la Tierra.</p>
+  <p>El estudio del Sistema Solar ayuda a comprender fenómenos como eclipses, estaciones y movimientos planetarios, y también inspira la exploración espacial.</p>
+  <p>  Ahora di en tus propias palabras lo que entendiste de la lectura     </p>
+  <button class="leer-btn">Leer en voz alta</button>
+</div>
+
+<!-- Tema 3: Historia de la Matemática -->
+<div class="discapacidad-card" id="texto3">
+  <h3>Historia de la Matemática</h3>
+  <p>La matemática surge de la necesidad de contar, medir y organizar la vida cotidiana de las primeras civilizaciones, como los egipcios y los sumerios.</p>
+  <p>Con el tiempo, se desarrollaron conceptos más abstractos, como el álgebra en Arabia, la geometría en Grecia y el cálculo en Europa durante el Renacimiento.</p>
+  <p>La matemática ha permitido avances en ingeniería, física, informática, economía y ciencias sociales, mostrando su importancia transversal en la sociedad.</p>
+  <p>Hoy en día, sigue evolucionando con nuevas ramas, aplicaciones en inteligencia artificial, estadística y modelado de fenómenos complejos, siendo esencial en la educación moderna.</p>
+ <p>  Ahora di en tus propias palabras lo que entendiste de la lectura     </p>
+  <button class="leer-btn">Leer en voz alta</button>
+</div>
+
+<!-- Tema 4: Ciclo del Agua y Contaminación -->
+<div class="discapacidad-card" id="texto4">
+  <h3>Ciclo del Agua y Contaminación</h3>
+  <p>El ciclo del agua describe cómo el agua se mueve continuamente entre océanos, ríos, atmósfera y suelo mediante procesos de evaporación, condensación y precipitación.</p>
+  <p>La contaminación del agua ocurre cuando sustancias químicas, desechos y microorganismos dañinos ingresan a ríos y lagos, afectando la vida acuática y la salud humana.</p>
+  <p>El consumo responsable y la protección de fuentes hídricas son esenciales para garantizar agua limpia para todos los seres vivos.</p>
+  <p>Educación, reciclaje y tratamiento de aguas residuales son algunas de las estrategias que ayudan a reducir la contaminación y preservar los ecosistemas acuáticos.</p>
+   <p>  Ahora di en tus propias palabras lo que entendiste de la lectura     </p>
+  <button class="leer-btn">Leer en voz alta</button>
+</div>
+
+<!-- Tema 5: Los Ecosistemas -->
+<div class="discapacidad-card" id="texto5">
+  <h3>Los Ecosistemas</h3>
+  <p>Un ecosistema es una comunidad de seres vivos que interactúan entre sí y con su entorno físico, como bosques, desiertos, océanos y lagos.</p>
+  <p>Cada ecosistema tiene su propia biodiversidad y equilibrio natural, donde cada especie cumple un rol importante en mantener la estabilidad del ambiente.</p>
+  <p>La acción humana, como la deforestación y la contaminación, puede alterar los ecosistemas, poniendo en riesgo la vida de plantas, animales y personas.</p>
+  <p>Conservar los ecosistemas es vital para la supervivencia del planeta, y se logra mediante educación ambiental, áreas protegidas y prácticas sostenibles en la vida diaria.</p>
+ <p>  Ahora di en tus propias palabras lo que entendiste de la lectura     </p>
+  <button class="leer-btn">Leer en voz alta</button>
+</div>
+
+<!-- Tema 5: Abecedario braille -->
+<div class="discapacidad-card" id="texto6">
+  <h3>Abecedario y numeros en braille</h3>
+  <p>Con ayuda de una persona, una hoja de papel y una aguja o un punzon estudia el sistema braille</p>
+ <p>Numeros en braille</p>
+  <img src="braille1.jpg" alt="Numeros braille">
+  <p>Abecedario braille</p>
+  <img src="braille3.jpg" alt="Abecedario braille">
+  <button class="leer-btn">Leer en voz alta</button>
+</div>
+</main>
+
+<footer>
+<h5>EDUCACION SIN BARRERAS</h5>
+<h5>2025</h5>
+</footer>
+
+<script src="Java.js"></script>
+<script>
+let leyendo = false;
+let mensaje = null;
+let botonActivo = null;
+
+// Función unificada para leer cualquier texto
+function leerTexto(tarjeta) {
+  const boton = tarjeta.querySelector('.leer-btn');
+  const texto = Array.from(tarjeta.querySelectorAll('h3, p')).map(el => el.innerText).join('. ');
+
+  if (!leyendo || botonActivo !== boton) {
+    if (speechSynthesis.speaking) speechSynthesis.cancel();
+    mensaje = new SpeechSynthesisUtterance(texto);
+    mensaje.lang = 'es-ES';
+    mensaje.rate = 1;
+    mensaje.pitch = 1;
+    window.speechSynthesis.speak(mensaje);
+    leyendo = true;
+    if (botonActivo) botonActivo.textContent = "Leer en voz alta";
+    botonActivo = boton;
+    boton.textContent = "Pausar lectura";
+  } else {
+    if (speechSynthesis.paused) {
+      speechSynthesis.resume();
+      boton.textContent = "Pausar lectura";
+    } else {
+      speechSynthesis.pause();
+      boton.textContent = "Reanudar lectura";
+    }
+  }
+
+  mensaje.onend = () => {
+    leyendo = false;
+    boton.textContent = "Leer en voz alta";
+    botonActivo = null;
+  };
+}
+
+// Asignar evento a cada botón de tarjeta
+document.querySelectorAll('.discapacidad-card').forEach(tarjeta => {
+  tarjeta.querySelector('.leer-btn').addEventListener('click', () => leerTexto(tarjeta));
+});
+
+// Botón general TAV
+const botonTTS = document.getElementById('ttsPagina');
+botonTTS.addEventListener('click', () => {
+  const textoCompleto = Array.from(document.querySelectorAll('h3, p')).map(el => el.innerText).join('. ');
+  if (!leyendo || botonActivo !== botonTTS) {
+    if (speechSynthesis.speaking) speechSynthesis.cancel();
+    mensaje = new SpeechSynthesisUtterance(textoCompleto);
+    mensaje.lang = 'es-ES';
+    mensaje.rate = 1;
+    mensaje.pitch = 1;
+    window.speechSynthesis.speak(mensaje);
+    leyendo = true;
+    if (botonActivo && botonActivo !== botonTTS) botonActivo.textContent = "Leer en voz alta";
+    botonActivo = botonTTS;
+    botonTTS.textContent = "Pausar lectura";
+  } else {
+    if (speechSynthesis.paused) {
+      speechSynthesis.resume();
+      botonTTS.textContent = "Pausar lectura";
+    } else {
+      speechSynthesis.pause();
+      botonTTS.textContent = "Reanudar lectura";
+    }
+  }
+
+  mensaje.onend = () => {
+    leyendo = false;
+    botonTTS.textContent = "TAV";
+    botonActivo = null;
+  };
+});
+</script>
+
+</body>
+</html>

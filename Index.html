@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educación sin Barreras</title>
+  <link rel="stylesheet" href="LIX.css">
+</head>
+
+<body>
+
+  <header>
+    <h4>EDUCACION SIN BARRERAS</h4>
+    <nav>
+      <a href="Index.html">Inicio</a>
+      <a href="Contenidos.html">Contenidos</a>
+      <a href="Recursos.html">Recursos</a>
+    </nav>
+  </header>
+
+  <div class="controls">
+    <button class="font-btn" onclick="changeFont(2)">A+</button>
+    <button class="font-btn" onclick="changeFont(-2)">A-</button>
+    <button class="contrast" onclick="toggleContrast()">Contraste</button>
+    <button class="grayscale" onclick="toggleGrayscale()">Grises</button>
+    <button class="tts-btn" id="ttsPagina" onclick="leerPagina()">TAV</button>
+  </div>
+
+  <main>
+    <h1>Bienvenido</h1>
+
+    <p>
+      Bienvenido a esta página web, un espacio creado con cariño para que todas las personas, sin importar sus capacidades o condiciones, puedan aprender y desarrollarse libremente.  
+      Aquí creemos que la educación es un derecho universal y que la tecnología puede ser una aliada poderosa para eliminar las barreras que separan a las personas del conocimiento.
+    </p>
+
+    <img src="disc.png" alt="Símbolo de inclusión educativa" class="img2">
+
+    <p>
+      En Bolivia, y especialmente en el municipio de <strong>Tupiza</strong>, muchas personas con discapacidad aún enfrentan dificultades para acceder a recursos educativos adaptados.  
+      Esta página web nace como una respuesta a esa realidad: un espacio digital donde la inclusión, la empatía y la oportunidad de aprender sean parte de cada clic.  
+      Aquí, cada persona tiene un lugar, una voz y la posibilidad de crecer.
+    </p>
+
+    <h2>Finalidad del Proyecto</h2>
+
+    <p>
+      El objetivo principal de esta página web es ofrecer contenidos y herramientas de aprendizaje accesibles para personas con diferentes tipos de discapacidad: visual, auditiva, motriz o cognitiva.  
+      Todos los materiales están pensados para adaptarse a las necesidades de cada usuario, haciendo del aprendizaje una experiencia más cómoda, sencilla y significativa.
+    </p>
+
+    <img src="conjunto.jpg" alt="Grupo de personas aprendiendo juntas">
+
+    <p>
+      Queremos que cada visitante sienta que aprender es posible, sin importar los obstáculos.  
+      La educación no debe tener límites, y esta página web busca demostrar que con apoyo, empatía y tecnología, todos podemos alcanzar nuestras metas.
+    </p>
+
+    <h2>¿Quiénes Participan de este Proyecto?</h2>
+
+    <h3>Estudiantes con Discapacidad</h3>
+    <p>
+      Son el corazón de esta página web. Cada color, cada función y cada palabra están pensados para que su experiencia de aprendizaje sea más accesible, agradable y útil.  
+      Sus aportes y sugerencias son fundamentales para seguir creciendo y mejorando día a día.
+    </p>
+
+    <h3>Familiares</h3>
+    <p>
+      Son el apoyo constante detrás de cada logro. Su acompañamiento y comprensión fortalecen el proceso de aprendizaje y hacen posible que esta página web cumpla su propósito de inclusión.
+    </p>
+
+    <h3>Docentes y Tutores</h3>
+    <p>
+      Son quienes guían, enseñan y adaptan los contenidos con empatía y compromiso.  
+      Gracias a su esfuerzo, esta página web puede ser un espacio útil para compartir conocimientos y promover una educación más humana e inclusiva.
+    </p>
+
+    <img src="familia dis.webp" alt="Familia apoyando el aprendizaje inclusivo">
+
+    <h2>Impacto Esperado</h2>
+    <p>
+      Con esta página web se busca reducir las brechas educativas, aumentar el acceso a la información y fomentar la autonomía de las personas con discapacidad.  
+      Queremos que cada usuario sienta que aprender no solo es posible, sino también emocionante y transformador.
+    </p>
+
+    <h2>Compromiso Social</h2>
+    <p>
+      Esta página web representa un compromiso con la inclusión, el respeto y la empatía.  
+      No se trata solo de enseñar, sino de construir un espacio donde todos tengan la oportunidad de aprender, compartir y ser escuchados.  
+      Juntos, podemos construir una educación sin barreras, donde cada persona tenga la oportunidad de brillar.
+    </p>
+<img src="educ3.png" alt="Educacion inclusiva">
+
+
+  </main>
+
+  <footer>
+    <h5>EDUCACION SIN BARRERAS</h5>
+    <h5>2025</h5>
+  </footer>
+
+  <script src="Java.js"></script>
+
+  <script>
+    const botonTTS = document.getElementById('ttsPagina');
+    let leyendo = false; 
+    let mensaje = null;  
+
+    botonTTS.addEventListener('click', () => {
+      if (!leyendo) {
+        const textoCompleto = document.body.innerText;
+        mensaje = new SpeechSynthesisUtterance(textoCompleto);
+        mensaje.lang = "es-ES";
+        mensaje.rate = 1;
+        mensaje.pitch = 1;
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(mensaje);
+        leyendo = true;
+        botonTTS.textContent = "Pausar lectura";
+      } else {
+        if (speechSynthesis.paused) {
+          speechSynthesis.resume();
+          botonTTS.textContent = "Pausar lectura";
+        } else {
+          speechSynthesis.pause();
+          botonTTS.textContent = "Reanudar lectura";
+        }
+      }
+    });
+
+    window.speechSynthesis.onend = () => {
+      leyendo = false;
+      botonTTS.textContent = "TAV";
+    };
+  </script>
+
+</body>
+</html>

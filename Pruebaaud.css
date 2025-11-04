@@ -1,0 +1,80 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f5ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header{
+    background: linear-gradient(135deg, #3b0a45,#6a0dad,#9b2fcf,#f28f6b);
+    color: white;
+    padding: 35px 20px;
+    text-align: center;
+}
+
+header nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    padding: 5px 10px;
+    background: #4b0082;
+    border-radius: 5px;
+}
+
+header nav a:hover {
+    background: #ba55d3;
+}
+
+h2.titulo-principal{
+    text-align: center;
+    color: #7b2cbf;
+    margin-top: 30px;
+    font-size: 1.6em;
+}
+
+.vision-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #ccc;
+    border-left: 5px solid transparent;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+   width: 80%;
+   height: auto;
+    transition: all 0.3s ease;
+}
+
+.vision-card h3 {
+    margin-top: 0;
+    color: #7b2cbf;
+    font-size: 1.4em;
+}
+
+.vision-card p {
+    margin: 10px 0;
+    font-size: 1em;
+    color: #333;
+}
+
+
+.vision-card:hover {
+    border-left: 5px solid #7b2cbf;
+    box-shadow: 0 6px 15px rgba(123,44,191,0.15);
+    transform: translateY(-2px);
+}
+
+footer {
+    background: linear-gradient(135deg,#f28f6b,#9b2fcf,#6a0dad,#3b0a45);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+img{
+
+width: 500px;
+height: auto;
+
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prueba de Audición</title>
+<link rel="stylesheet" href="LIX.css">
+<link rel="stylesheet" href="pruebavis.css">
+</head>
+<body>
+
+<header>
+  <h4>PRUEBA DE AUDICIÓN</h4>
+  <nav>
+    <a href="Index.html">Inicio</a>
+    <a href="Contenidos.html">Contenidos</a>
+    <a href="Recursos.html">Recursos</a>
+  </nav>
+</header>
+
+<div class="controls">
+    <button class="font-btn" onclick="changeFont(2)">A+</button>
+    <button class="font-btn" onclick="changeFont(-2)">A-</button>
+    <button class="contrast" onclick="toggleContrast()">Contraste</button>
+    <button class="grayscale" onclick="toggleGrayscale()">Grises</button>
+    <button class="tts-btn" id="ttsPagina" onclick="leerPagina()">TAV</button>
+  </div>
+
+<main>
+  <h2 class="titulo-principal">Pruebas Auditivas</h2>
+
+  <div class="vision-card">
+    <h3>Prueba de Tono Puro</h3>
+    <p>
+      En esta prueba escucharás una serie de sonidos que van desde tonos graves hasta tonos agudos. 
+      Tu tarea es reproducir el video y prestar mucha atención a cada sonido. Cuando escuches un sonido, puedes anotarlo mentalmente o en papel. 
+      Esta prueba permite conocer tu rango auditivo, es decir, hasta qué frecuencia puedes escuchar correctamente. 
+      No te preocupes si algunos sonidos son muy suaves o agudos; la idea es simplemente medir tu capacidad auditiva. 
+      Los resultados pueden ayudar a identificar pérdida de audición en ciertas frecuencias y a recomendar ajustes en tu entorno o dispositivos de ayuda auditiva si fueran necesarios.
+    </p>
+    <iframe width="300" height="180" src="https://www.youtube.com/embed/VIDEO_ID_1" 
+            title="Prueba de Tono Puro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="vision-card">
+    <h3>Prueba de Discriminación de Palabras</h3>
+    <p>
+      Esta prueba consiste en escuchar palabras cortas reproducidas en diferentes volúmenes y entonaciones. 
+      Tu objetivo es repetirlas o anotarlas, dependiendo de cómo prefieras seguir la prueba. 
+      Esta evaluación permite medir qué tan bien tu cerebro interpreta y entiende el habla, incluso si hay ruido de fondo o sonidos superpuestos. 
+      No te preocupes si no reconoces todas las palabras; lo importante es obtener información sobre tu capacidad auditiva en situaciones de comunicación cotidiana. 
+      Una buena comprensión auditiva es clave para interactuar con otras personas, seguir instrucciones y disfrutar de conversaciones sin esfuerzo.
+    </p>
+    <iframe width="300" height="180" src="https://www.youtube.com/embed/VIDEO_ID_2" 
+            title="Prueba de Discriminación de Palabras" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="vision-card">
+    <h3>Prueba de Localización de Sonido</h3>
+    <p>
+      En esta prueba escucharás sonidos que parecen provenir de diferentes direcciones: izquierda, derecha, delante o detrás. 
+      Tu tarea es identificar de dónde proviene cada sonido mientras lo escuchas atentamente. 
+      Esta evaluación es importante porque nos permite medir tu habilidad para localizar sonidos en el espacio, lo que puede ser útil para tu seguridad y orientación en la vida diaria. 
+      Algunas personas perciben mejor ciertos sonidos desde un lado; esto es normal, pero la prueba ayuda a detectar diferencias significativas que podrían requerir atención. 
+      Tómate tu tiempo y concéntrate en cada sonido sin prisa.
+    </p>
+    <iframe width="300" height="180" src="https://www.youtube.com/embed/VIDEO_ID_3" 
+            title="Prueba de Localización de Sonido" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="vision-card">
+    <h3>Prueba de Reconocimiento de Entornos</h3>
+    <p>
+      Esta prueba consiste en escuchar distintos sonidos ambientales como lluvia, tráfico, campanas o pasos. 
+      Tu objetivo es identificar correctamente qué sonido estás escuchando. 
+      Esta evaluación ayuda a entender tu capacidad de percepción auditiva en situaciones reales y complejas, donde los sonidos no siempre son claros o están mezclados. 
+      No te preocupes si al principio no reconoces todos los sonidos: lo importante es concentrarte y hacer tu mejor esfuerzo. 
+      Esta prueba también permite evaluar cómo tu cerebro interpreta múltiples estímulos auditivos y cómo puedes reaccionar a ellos en tu vida cotidiana.
+    </p>
+    <iframe width="300" height="180" src="https://www.youtube.com/embed/VIDEO_ID_4" 
+            title="Prueba de Reconocimiento de Entornos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+</main>
+
+<footer>
+  <h5>EDUCACIÓN SIN BARRERAS</h5>
+  <h5>2025</h5>
+</footer>
+
+<script src="Java.js"></script>
+
+  <script>
+    const botonTTS = document.getElementById('ttsPagina');
+    let leyendo = false; 
+    let mensaje = null;  
+
+    botonTTS.addEventListener('click', () => {
+      if (!leyendo) {
+        const textoCompleto = document.body.innerText;
+        mensaje = new SpeechSynthesisUtterance(textoCompleto);
+        mensaje.lang = "es-ES";
+        mensaje.rate = 1;
+        mensaje.pitch = 1;
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(mensaje);
+        leyendo = true;
+        botonTTS.textContent = "Pausar lectura";
+      } else {
+        if (speechSynthesis.paused) {
+          speechSynthesis.resume();
+          botonTTS.textContent = "Pausar lectura";
+        } else {
+          speechSynthesis.pause();
+          botonTTS.textContent = "Reanudar lectura";
+        }
+      }
+    });
+
+    window.speechSynthesis.onend = () => {
+      leyendo = false;
+      botonTTS.textContent = "TAV";
+    };
+  </script>
+
+
+</body>
+</html>
